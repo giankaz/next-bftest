@@ -18,7 +18,7 @@ import RadioBox from "../../components/Global/Radio";
 import RadioGroups from "../../components/Global/RadioGroup";
 import DisparoLogo from "../../components/LeftSideDesktop/DisparoLogo";
 import LeftFigure from "../../components/LeftSideDesktop/LeftFigure";
-import { StyledMain } from "./styles";
+import { StyledMain } from "../../styles/CadastroStyles/styles";
 import { useRouter } from "next/router";
 import LinearIndeterminate from "../../components/UI/LinearMUI";
 
@@ -120,7 +120,7 @@ export default function Register({data}) {
 			}, 2000);
 		}
 	};
-	
+
 	if (!data) {
 		return <LinearIndeterminate/>
 	}

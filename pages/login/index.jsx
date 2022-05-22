@@ -14,7 +14,7 @@ import InputBase from "../../components/Global/InputBase";
 import InputPass from "../../components/Global/InputPass";
 import DisparoLogo from "../../components/LeftSideDesktop/DisparoLogo";
 import LeftFigure from "../../components/LeftSideDesktop/LeftFigure";
-import { StyledErrorContainer, StyledMain } from "./styles";
+import { StyledErrorContainer, StyledMain } from "../../styles/LoginStyles/styles";
 import Image from "next/image";
 import LinearIndeterminate from "../../components/UI/LinearMUI";
 

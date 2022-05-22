@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { StyledMain } from './styles'
+import { StyledMain } from '../../styles/404Styles/styles'
 
 export default function NotFound() {
   return (
