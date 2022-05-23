@@ -5,6 +5,6 @@ export const StyledDiv = styled.div`
  
     img {
     
-       max-width: 400px;
+     
     }
 `

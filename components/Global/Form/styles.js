@@ -5,6 +5,7 @@ export const StyledForm = styled.form`
     width: 100%;
     max-width: 370px;
     min-height: 400px;
+    border: 1px solid rgba(202, 203, 204, 1);
     
     padding: 20px;
     
@@ -15,9 +16,8 @@ export const StyledForm = styled.form`
     align-items: center;
     
     background-color: var(--white);
-    -webkit-box-shadow: 8px 10px 21px -10px rgba(0,0,0,0.2);
-    -moz-box-shadow: 8px 10px 21px -10px rgba(0,0,0,0.2);
-    box-shadow: 8px 10px 21px -10px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.15);
+
 
     @media (max-width: 500px) {
       & {

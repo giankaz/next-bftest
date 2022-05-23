@@ -23,12 +23,19 @@ export const StyledMain = styled.main`
     justify-content: center;
     align-items: center;
 
-    background-repeat: repeat-x;
-    background-size: cover;
-    background: rgb(125,185,232); 
-    background: -moz-linear-gradient(-45deg,  rgba(125,185,232,1) 0%, rgba(41,137,216,1) 29%, rgba(30,87,153,1) 100%); 
-    background: -webkit-linear-gradient(-45deg,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 29%,rgba(30,87,153,1) 100%); 
-    background: linear-gradient(135deg,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 29%,rgba(30,87,153,1) 100%); 
+    background-image: linear-gradient(
+  130deg,
+  hsl(206deg 90% 59%) 0%,
+  hsl(207deg 77% 55%) 21%,
+  hsl(207deg 67% 51%) 30%,
+  hsl(208deg 65% 47%) 39%,
+  hsl(208deg 66% 43%) 46%,
+  hsl(208deg 66% 39%) 54%,
+  hsl(209deg 67% 35%) 61%,
+  hsl(209deg 68% 32%) 69%,
+  hsl(210deg 69% 28%) 79%,
+  hsl(210deg 70% 24%) 100%
+);
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );  
   }
@@ -44,12 +51,12 @@ export const StyledMain = styled.main`
   .form__container {
     justify-content: center;
     align-items: center;
-
     padding: 20px;
   }
 
   .form__innerBox {
     width: 100%;
+
 
     display: flex;
     flex-direction: column;
@@ -101,12 +108,19 @@ export const StyledMain = styled.main`
       align-items: center;
       justify-content: center;
 
-      background-repeat: repeat-x;
-      background-size: cover;
-      background: rgb(125,185,232); 
-      background: -moz-linear-gradient(-45deg,  rgba(125,185,232,1) 0%, rgba(41,137,216,1) 29%, rgba(30,87,153,1) 100%); 
-      background: -webkit-linear-gradient(-45deg,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 29%,rgba(30,87,153,1) 100%); 
-      background: linear-gradient(135deg,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 29%,rgba(30,87,153,1) 100%); 
+      background-image: linear-gradient(
+                        130deg,
+                        hsl(206deg 90% 59%) 0%,
+                        hsl(207deg 77% 55%) 21%,
+                        hsl(207deg 67% 51%) 30%,
+                        hsl(208deg 65% 47%) 39%,
+                        hsl(208deg 66% 43%) 46%,
+                        hsl(208deg 66% 39%) 54%,
+                        hsl(209deg 67% 35%) 61%,
+                        hsl(209deg 68% 32%) 69%,
+                        hsl(210deg 69% 28%) 79%,
+                        hsl(210deg 70% 24%) 100%
+                      );
 
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );  
     }
@@ -129,12 +143,19 @@ export const StyledMain = styled.main`
     align-items: center;
     justify-content: center;
 
-    background-repeat: repeat-x;
-    background-size: cover;
-    background: rgb(125,185,232); 
-    background: -moz-linear-gradient(-45deg,  rgba(125,185,232,1) 0%, rgba(41,137,216,1) 29%, rgba(30,87,153,1) 100%); 
-    background: -webkit-linear-gradient(-45deg,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 29%,rgba(30,87,153,1) 100%); 
-    background: linear-gradient(135deg,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 29%,rgba(30,87,153,1) 100%); 
+    background-image: linear-gradient(
+                    130deg,
+                    hsl(206deg 90% 59%) 0%,
+                    hsl(207deg 77% 55%) 21%,
+                    hsl(207deg 67% 51%) 30%,
+                    hsl(208deg 65% 47%) 39%,
+                    hsl(208deg 66% 43%) 46%,
+                    hsl(208deg 66% 39%) 54%,
+                    hsl(209deg 67% 35%) 61%,
+                    hsl(209deg 68% 32%) 69%,
+                    hsl(210deg 69% 28%) 79%,
+                    hsl(210deg 70% 24%) 100%
+                  );
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );  
   }
