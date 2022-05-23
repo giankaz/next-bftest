@@ -24,6 +24,7 @@ export const StyledMain = styled.main`
       display: flex;
       position: relative;
       justify-content: center;
+      gap: 80px;
       align-items: center;
 
       background-image: linear-gradient(

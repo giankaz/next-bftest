@@ -22,7 +22,7 @@ export const StyledMain = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-
+    gap: 50px;
     background-image: linear-gradient(
   130deg,
   hsl(206deg 90% 59%) 0%,
@@ -160,7 +160,11 @@ export const StyledMain = styled.main`
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=1 );  
   }
 
-
+  .mobile__logo {
+      display: block;
+      width: 200px;
+      justify-self: flex-start;
+    }
 
   .figure__container {
     display: none;
