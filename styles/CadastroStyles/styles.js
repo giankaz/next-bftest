@@ -205,6 +205,7 @@ export const StyledMain = styled.main`
 
   .form__container {
          width: 100%;
+         padding: 0;
   }
 }
 `

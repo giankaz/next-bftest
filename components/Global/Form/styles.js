@@ -26,4 +26,12 @@ export const StyledForm = styled.form`
       }
     }
 
+    
+@media (max-width: 400px) {
+  & {
+    border: none;
+    box-shadow: none;
+  }
+}
+
 `
