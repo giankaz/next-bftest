@@ -21,6 +21,8 @@ import LeftFigure from "../../components/LeftSideDesktop/LeftFigure";
 import { StyledMain } from "../../styles/CadastroStyles/styles";
 import { useRouter } from "next/router";
 import LinearIndeterminate from "../../components/UI/LinearMUI";
+import Head from "next/head";
+
 
 export default function Register({data}) {
 
@@ -126,7 +128,11 @@ export default function Register({data}) {
 	}
 
 	return (
-		
+		<>
+		<Head>
+		<title>Disparo PRO | Cadastro</title>
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+         </Head>
 		<StyledMain>
 			<section className="figure__container">
 				<DisparoLogo className="figure__logo" />
@@ -214,6 +220,7 @@ export default function Register({data}) {
 				</Form>
 			</section>
 		</StyledMain>
+		</>
 	);
 }
 

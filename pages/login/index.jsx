@@ -17,6 +17,7 @@ import LeftFigure from "../../components/LeftSideDesktop/LeftFigure";
 import { StyledErrorContainer, StyledMain } from "../../styles/LoginStyles/styles";
 import Image from "next/image";
 import LinearIndeterminate from "../../components/UI/LinearMUI";
+import Head from "next/head";
 
 
 
@@ -81,6 +82,11 @@ export default function Login({data}) {
 	}
 
 	return (
+		<>
+		    <Head>
+		<title>Disparo PRO | Login</title>
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+           </Head>
 		<StyledMain>
 			<section className="figure__container">
 				<DisparoLogo className="figure__logo" />
@@ -144,6 +150,7 @@ export default function Login({data}) {
 				</Form>
 			</section>
 		</StyledMain>
+		</>
 	);
 }
 
