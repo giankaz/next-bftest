@@ -3,7 +3,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 
-export default function RadioGroups({ setNotify }) {
+export default function RadioGroups({ setValue }) {
   
 	return (
 		<FormControl>
@@ -19,7 +19,7 @@ export default function RadioGroups({ setNotify }) {
 					control={
 						<Radio
 							size="small"
-							onChange={() => setNotify(true)}
+							onChange={() => setValue('notify', true)}
 							sx={{
 								"& .MuiSvgIcon-root": {
 									color: "var(--blue2)",
@@ -35,7 +35,7 @@ export default function RadioGroups({ setNotify }) {
 					control={
 						<Radio
 							size="small"
-							onChange={() => setNotify(false)}
+							onChange={() => setValue('notify',false)}
 							sx={{
 								"& .MuiSvgIcon-root": {
 									color: "var(--blue2)",

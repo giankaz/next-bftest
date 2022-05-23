@@ -1,7 +1,7 @@
 //hooks
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useSnackbar } from "notistack";
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 import Link from 'next/link'
 import * as yup from "yup";
@@ -24,19 +24,7 @@ import LinearIndeterminate from "../../components/UI/LinearMUI";
 import Head from "next/head";
 
 
-export default function Register({data}) {
-
-	const [number, setNumber] = useState("");
-
-	const [agreed, setAgreed] = useState(false);
-
-	const [notify, setNotify] = useState("");
-
-	const [numberError, setNumberError] = useState(false);
-
-	const [agreedError, setAgreedError] = useState(false);
-
-	const [notifyError, setNotifyError] = useState(false);
+export default function Register({check}) {
 
 	const { enqueueSnackbar } = useSnackbar();
 	
@@ -64,53 +52,28 @@ export default function Register({data}) {
 			.required("Confirme sua senha!")
 			.min(6, "Senha deve ter 6 caracteres ou mais.")
 			.oneOf([yup.ref("pass")], "As senhas não são iguais!"),
-		agreed: yup.boolean().isTrue("Você deve Aceitar os Termos!"),
+		agreed: yup.boolean().isTrue("Você deve Aceitar os Termos!").required("Você deve aceitar os termos para continuar."),
+		notify: yup.boolean().required("Escolha se deseja receber ofertas, novidades, conteúdos informativos e publicitários:"),
+		num: yup.string().required("Digite seu Número").min(12, "Deve ter no mínimo 12 caracteres."),
+
 	});
 
+	
 	const {
 		register,
+		setValue,
 		handleSubmit,
 		formState: { errors },
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
+	
+
+
 
 	const submit = (data) => {
 
-		if (number.length < 13) {
-
-			setNumberError(true);
-
-		} else if (!agreed) {
-
-			setNumberError(false);
-
-			setAgreedError(true);
-
-		} else if (notify === "") {
-
-			setNumberError(false);
-
-			setAgreedError(false);
-
-			setNotifyError(true);
-
-		} else {
-
-			setNumberError(false);
-
-			setNotifyError(false);
-
-			setAgreedError(false);
-
-			const userSubmit = {
-				...data,
-				number: number,
-				agreed: agreed,
-				notify: notify,
-			};
-
-			localStorage.setItem("@Disparo_userSubmit", JSON.stringify(userSubmit));
+			localStorage.setItem("@Disparo_userSubmit", JSON.stringify(data))
 
 			enqueueSnackbar(`Cadastro Realizado! Faça seu login para continuar.`, {
 				variant: "success",
@@ -120,10 +83,10 @@ export default function Register({data}) {
 			setTimeout(() => {
 				router.push("/login");
 			}, 2000);
-		}
-	};
+		
+	}
 
-	if (!data) {
+	if (!check) {
 		return <LinearIndeterminate/>
 	}
 
@@ -166,10 +129,9 @@ export default function Register({data}) {
 
 							<InputPhone
 								label="Número"
-								number={number}
-								setNumber={setNumber}
-								className={numberError ? "error" : undefined}
-								errorMsg={numberError && "Digite seu Número corretamente."}
+								setValue={setValue}
+								className={errors.num?.message ? "error" : undefined}
+								errorMsg={errors.num?.message && errors.num.message}
 							/>
 
 							<InputPass
@@ -189,20 +151,18 @@ export default function Register({data}) {
 							/>
 
 							<RadioBox
-								setAgreed={setAgreed}
-								errorMsg={
-									agreedError && "Você deve aceitar os termos para continuar!"
-								}
-								className={agreedError && "error"}
+								setValue={setValue}
+								errorMsg={errors.agreed?.message && errors.agreed.message}
+								className={errors.agreed?.message ? 'error' : undefined}
 							/>
 
 							<div className="register__notify">
-								<span className={notifyError ? "error" : undefined}>
-									{notifyError
-										? "Escolha se deseja receber ofertas, novidades, conteúdos informativos e publicitários:"
+								<span className={errors.notify?.message ? "error" : undefined}>
+									{errors.notify?.message  
+										? errors.notify.message
 										: "Quero receber ofertas, novidades, conteúdos informativos e publicitários da Disparo Pro"}
 								</span>
-								<RadioGroups setNotify={setNotify} />
+								<RadioGroups setValue={setValue} />
 							</div>
 
 							<Button width={"70%"} type="submit">
@@ -228,7 +188,7 @@ export default function Register({data}) {
 export async function getStaticProps (context) {  								   
 	return {
 		 props: {
-			data: true
+			check: true
 		}
 	}
 }

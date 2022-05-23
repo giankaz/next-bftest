@@ -56,7 +56,7 @@ export default function Login({data}) {
 		
 		const dataBase = JSON.parse(localStorage.getItem("@Disparo_userSubmit"));
 
-		if (dataBase.email === data.email || dataBase.number === data.email) {
+		if (dataBase.email === data.email || dataBase.num === data.email) {
 
 			if (dataBase.pass === data.pass) {
 

@@ -4,10 +4,9 @@ import { StyledDiv } from "./styles";
 
 export default function InputPhone({
 	label,
-	number,
-	setNumber,
 	className,
-	errorMsg
+	errorMsg,
+	setValue
 }) {
 	return (
 		<StyledDiv>
@@ -18,10 +17,12 @@ export default function InputPhone({
 
 			<PhoneInput
 				country={"br"}
-				value={number}
-				onChange={(phone) => setNumber(phone)}
+				onChange={(phone) => {
+					setValue('num', phone)
+				}}
 				enableAreaCodes={true}
 				isValid={() => className ? '' : true}
+				
 				preferredCountries={["br", "us"]}
 				inputStyle={{ width: "100%", height: "40px", color: "var(--blue2)" }}
 				containerStyle={{

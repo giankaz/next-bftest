@@ -1,17 +1,15 @@
 import Radio from "@mui/material/Radio";
 import { StyledDiv } from "./styles";
 
-export default function RadioBox({ setAgreed, className, errorMsg }) {
-
-	const handleChange = (event) => {
-		setAgreed(true);
-	};
+export default function RadioBox({ className, errorMsg, setValue }) {
 
 	return (
 		<StyledDiv>
 
 			<Radio
-				onChange={handleChange}
+				onChange={() => {
+					setValue('agreed', true)
+				}}
 				size="small"
 				sx={{
 					"& .MuiSvgIcon-root": {
